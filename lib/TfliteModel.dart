@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
+import 'package:tflite_image_classification/widgets/image_vege.dart';
 import '../../shared/theme.dart';
 
 class TfliteModel extends StatefulWidget {
@@ -112,7 +113,13 @@ class _TfliteModelState extends State<TfliteModel> {
                     child: Opacity(
                       opacity: 0.8,
                       child: Center(
-                        child: Text("No image selected"),
+                        child: Text(
+                          "No image selected",
+                          style: blackTextStyle.copyWith(
+                            fontSize: 18,
+                            fontWeight: semiBold,
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -141,7 +148,8 @@ class _TfliteModelState extends State<TfliteModel> {
                           Container(
                             height: 16,
                             width: 16,
-                            margin: EdgeInsets.only(left: 10,right: defaultMargin),
+                            margin:
+                                EdgeInsets.only(left: 10, right: defaultMargin),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle, color: kBlueColor),
                           )
@@ -166,22 +174,39 @@ class _TfliteModelState extends State<TfliteModel> {
                               borderRadius: BorderRadius.circular(18)),
                           child: Row(
                             children: [
-                              Container(
-                                height: 70,
-                                width: 70,
-                                padding: EdgeInsets.all(6),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: kBlueColor,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(18)),
-                                child: Image.asset(
-                                  "assets/images/img-vege.png",
-                                  height: 24,
-                                  width: 24,
-                                ),
-                              ),
+                              if (result['label'] == "Bean") ...[
+                                ImageVege("assets/images/img-bean.jpg")
+                              ] else if (result['label'] == "Bitter_Gourd") ...[
+                                ImageVege("assets/images/img-bitter.jpg")
+                              ] else if (result['label'] == "Bottle_Gourd") ...[
+                                ImageVege("assets/images/img-bottle.jpg")
+                              ] else if (result['label'] == "Brinjal") ...[
+                                ImageVege("assets/images/img-brinjal.jpg")
+                              ] else if (result['label'] == "Broccoli") ...[
+                                ImageVege("assets/images/img-brokoli.jpg")
+                              ] else if (result['label'] == "Cabbage") ...[
+                                ImageVege("assets/images/img-cabbage.jpg")
+                              ] else if (result['label'] == "Capsicum") ...[
+                                ImageVege("assets/images/img-paprika.jpg")
+                              ] else if (result['label'] == "Carrot") ...[
+                                ImageVege("assets/images/img-carrot.jpg")
+                              ] else if (result['label'] == "Cauliflower") ...[
+                                ImageVege("assets/images/img-cauli.jpg")
+                              ] else if (result['label'] == "Cucumber") ...[
+                                ImageVege("assets/images/img-cucumber.jpg")
+                              ] else if (result['label'] == "Papaya") ...[
+                                ImageVege("assets/images/img-papaya.jpg")
+                              ] else if (result['label'] == "Potato") ...[
+                                ImageVege("assets/images/img-potato.jpg")
+                              ] else if (result['label'] == "Pumpkin") ...[
+                                ImageVege("assets/images/img-pumpkin.jpg")
+                              ] else if (result['label'] == "Radish") ...[
+                                ImageVege("assets/images/img-radish.jpg")
+                              ] else if (result['label'] == "Tomato") ...[
+                                ImageVege("assets/images/img-tomato.jpg")
+                              ] else ...[
+                                ImageVege("assets/images/img-vege.png")
+                              ],
                               SizedBox(
                                 width: 16,
                               ),
@@ -190,8 +215,8 @@ class _TfliteModelState extends State<TfliteModel> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text("${result['label']}",
-                                    // maxLines: 1,
-                                    // overflow: TextOverflow.ellipsis,
+                                        // maxLines: 1,
+                                        // overflow: TextOverflow.ellipsis,
                                         style: blackTextStyle.copyWith(
                                             fontSize: 18, fontWeight: medium)),
                                     SizedBox(
