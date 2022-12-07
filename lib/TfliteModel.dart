@@ -167,7 +167,7 @@ class _TfliteModelState extends State<TfliteModel> {
                           margin: EdgeInsets.only(
                               left: defaultMargin,
                               right: defaultMargin,
-                              top: 12),
+                              top: 12,),
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                               color: kWhiteColor,
@@ -261,17 +261,38 @@ class _TfliteModelState extends State<TfliteModel> {
           ],
         ),
       ),
-      floatingActionButton: Container(
-        height: 70.0,
-        width: 70.0,
-        child: FloatingActionButton(
-          onPressed: pickImage,
-          tooltip: "Pick Image",
-          child: Image.asset(
-            "assets/images/ic-add.png",
-            height: 42,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            height: 70.0,
+            width: 70.0,
+            child: FloatingActionButton(
+              heroTag: null,
+              onPressed: pickCameraImage,
+              tooltip: "Pick Camera Image",
+              child: Image.asset(
+                "assets/images/img-camera.png",
+                height: 42,
+              ),
+            ),
           ),
-        ),
+          SizedBox(width:14),
+          Container(
+            height: 70.0,
+            width: 70.0,
+            child: FloatingActionButton(
+              onPressed: pickImage,
+              heroTag: null,
+
+              tooltip: "Pick Image",
+              child: Image.asset(
+                "assets/images/ic-add.png",
+                height: 42,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -280,6 +301,15 @@ class _TfliteModelState extends State<TfliteModel> {
     final ImagePicker _picker = ImagePicker();
     final XFile? pickedFile = await _picker.pickImage(
       source: ImageSource.gallery,
+    );
+    File image = File(pickedFile!.path);
+    imageClassification(image);
+  }
+
+  Future pickCameraImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.camera,
     );
     File image = File(pickedFile!.path);
     imageClassification(image);
