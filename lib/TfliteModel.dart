@@ -66,7 +66,7 @@ class _TfliteModelState extends State<TfliteModel> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Howdy,\nKelompok 5',
+                          'Howdy,\nAlvito Aditya',
                           style: blackTextStyle.copyWith(
                             fontSize: 24,
                             fontWeight: semiBold,

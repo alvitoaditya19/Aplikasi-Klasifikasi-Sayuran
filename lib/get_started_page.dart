@@ -40,20 +40,9 @@ class GetStartedPage extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  margin: EdgeInsets.only(
-                      right: defaultMargin, left: defaultMargin, top: 30),
-                  width: double.infinity,
-                  height: 224,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/img-name.png'),
-                    ),
-                  ),
-                ),
                 Spacer(),
                 Text(
-                  'Aplikasi Klasifikasi Sayuran',
+                  'Vegetable Classification App',
                   style: whiteTextStyle.copyWith(
                     fontWeight: semiBold,
                     fontSize: 24,
@@ -63,7 +52,7 @@ class GetStartedPage extends StatelessWidget {
                   height: 10,
                 ),
                 Text(
-                  'Kenali nama sayuran dengan Metode\nMobilenetv2  (CNN) dan TFLite yang\nterhubung dengan aplikasi Flutter',
+                  'Recognize vegetable names with the\nMobilenetv2 (CNN) Method and TFLite\nconnected with the Flutter app',
                   style: whiteTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: light,
