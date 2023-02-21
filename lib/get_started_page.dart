@@ -37,52 +37,54 @@ class GetStartedPage extends StatelessWidget {
                 ),
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Spacer(),
-                Text(
-                  'Vegetable Classification App',
-                  style: whiteTextStyle.copyWith(
-                    fontWeight: semiBold,
-                    fontSize: 24,
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Spacer(),
+                  Text(
+                    'Vegetable Classification App',
+                    style: whiteTextStyle.copyWith(
+                      fontWeight: semiBold,
+                      fontSize: 24,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'Recognize vegetable names with the\nMobilenetv2 (CNN) Method and TFLite\nconnected with the Flutter app',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 16,
-                    fontWeight: light,
+                  SizedBox(
+                    height: 10,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/main');
+                  Text(
+                    'Recognize vegetable names with the\nMobilenetv2 (CNN) Method and TFLite\nconnected with the Flutter app',
+                    style: whiteTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: light,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/sign-in');
 
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 52,
-                      vertical: 14,
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 52,
+                        vertical: 14,
+                      ),
+                      margin: EdgeInsets.only(
+                        top: 50,
+                        bottom: 46,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: kBlueColor,
+                      ),
+                      child: Text('Get Started',
+                          style: whiteTextStyle.copyWith(
+                              fontSize: 18, fontWeight: medium)),
                     ),
-                    margin: EdgeInsets.only(
-                      top: 50,
-                      bottom: 46,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: kBlueColor,
-                    ),
-                    child: Text('Get Started',
-                        style: whiteTextStyle.copyWith(
-                            fontSize: 18, fontWeight: medium)),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ],
         ),

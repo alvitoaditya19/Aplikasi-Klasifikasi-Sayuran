@@ -77,7 +77,7 @@ class _TfliteModelState extends State<TfliteModel> {
                           height: 6,
                         ),
                         Text(
-                          'Jenis sayuran apa ini?',
+                          'what type of vegetable is this?',
                           style: greyTextStyle.copyWith(
                             fontSize: 16,
                             fontWeight: light,

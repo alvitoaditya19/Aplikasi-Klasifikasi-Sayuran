@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tflite_image_classification/TfliteModel.dart';
 import 'package:tflite_image_classification/get_started_page.dart';
+import 'package:tflite_image_classification/sign_in_screen.dart';
 import 'package:tflite_image_classification/splash_page.dart';
 
 void main() {
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => SplashPage(),
           '/get-started': (context) => GetStartedPage(),
-          '/main': (context) => TfliteModel(),
+          '/sign-in': (context) =>  SignInScreen(),
+          '/home': (context) => TfliteModel(),
         },
     );
   }

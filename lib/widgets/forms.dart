@@ -45,7 +45,17 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           keyboardType: keyboardType,
           obscureText: isObscure,
-       
+          decoration: InputDecoration(
+            filled: isHaveColor,
+            fillColor: isHaveColor ? backgroundColor : null,
+            hintText: !isShowTitle ? label : null,
+            contentPadding: const EdgeInsets.all(12),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(14),
+              borderSide:
+                  isHaveBorderSide ? const BorderSide() : BorderSide.none,
+            ),
+          ),
         ),
       ],
     );
